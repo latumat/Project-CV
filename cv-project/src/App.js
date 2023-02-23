@@ -1,35 +1,44 @@
 import './App.css';
+import React, { useState } from "react";
 import General from './Components/General';
+import Skills from './Components/Skills';
 import Resume from './Components/Resume';
 import NewExperience from './Components/NewExperience';
-import React, { useState } from "react";
+import Education from './Components/Education';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(["", "", "", "", ""]);
-  const [previousExperience, setPreviousExperience] = useState(["", "", "", ""]);
-  const [addedExperience, setAddedExperience] = useState(["", "", "", "", ""]);
+  const [previousExperience, setPreviousExperience] = useState(["", "", "", "", ""]);
+  const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
+  const [education, setEducation] = useState(["", "", "", ""]);
 
   function addExperience() {
     setExperiences(experiences.concat(
-    <div>
-      {previousExperience[2]} - {previousExperience[3]}: {previousExperience[0]} at {previousExperience[1]}
+    <div className="add-experience">
+      <p> <b>{previousExperience[0]} | {previousExperience[1]} ({previousExperience[3]} - {previousExperience[4]}) </b></p>
+      <p> {previousExperience[2]} </p>
     </div>))
-  }
-
-  function testing2() {
-    console.log(previousExperience);
   }
 
   return (
     <div className="project">
+      <div className="navbar">
+        <h1> Software Engineer CV </h1>
+      </div>
       <div className="submission">
         <General setPersonalInfo={setPersonalInfo}/>
+        <Education setEducation={setEducation}/>
+        <Skills setSkills={setSkills}/>
         <NewExperience setPreviousExperience={setPreviousExperience}/>
-        <button onClick={addExperience}> Add </button>
-        <button onClick={testing2}> TEST2</button>
+        <div>
+          <button onClick={addExperience}> Add </button>
+        </div>
       </div>
-      <Resume personalInfo={personalInfo} previousExperience={previousExperience} experiences={experiences}/>
+      <div className="resume-app">
+        <Resume personalInfo={personalInfo} previousExperience={previousExperience} education={education} skills={skills} experiences={experiences}/>
+      </div>
+    
     </div>
   )
 }

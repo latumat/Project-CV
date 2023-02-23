@@ -1,14 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+
+body {
+  background-color: rgb(222, 220, 220);
+}
+
+button {
+  width: 100px;
+}
+
 .project {
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
-
+/* Navbar */
+.navbar {
+  text-align: center;
+  height: 125px;
+  background-color: #000814;
+  font-family: 'Tilt Prism', cursive;
+  color: white;
+  font-size: 25px;
+}
 /* Submission */
 .submission {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
   width: 50%;
-  border: solid 1px black;
+  border-radius: 5%;
   padding: 20px;
+  margin-left: 25%;
+  margin: 25px auto;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+.info {
+  height: 25px;
+  margin: 5px;
+  box-sizing: border-box;
 }
 
 .generalInformation {
@@ -16,36 +46,47 @@
   flex-direction: column;
 }
 
+/* Resume */
+
+.resume-app {
+  margin-left: 15%;
+}
+
 .resume {
   display: flex;
   flex-direction: column;
   width: 75%;
   height: 1000px;
-  border: solid 1px black;
+  padding: 50px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  margin-bottom: 25px;
 }
 
 .header {
-  height: 20%;
-  border: solid 1px black;
+  height: 15%;
+  border-bottom: solid 1px black;
+  text-align: center;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   height: 80%;
 }
 
-.personal {
-  width: 25%;
-  border-left: solid 1px black;
+/* Skills */
+.skills-resume {
+  border-top: solid 1px black;
 }
 
 /* Experience */
 
-.experience {
-  width: 75%;
-}
-
 .add-experience {
   display: flex;
   flex-direction: column;
+}
+
+.experience {
+  border-top: solid black 1px;
 }
